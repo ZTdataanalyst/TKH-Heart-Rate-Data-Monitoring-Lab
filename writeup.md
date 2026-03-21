@@ -1,6 +1,6 @@
 1) Which file appears to represent the most active period? Explain using at least two metrics. Consider that this is a 30 year old participant and compare your output to the column titled "Target HR Zone 50-85%" within this link: https://www.heart.org/en/healthy-living/fitness/fitness-basics/target-heart-rates
 
-Phase_1 has the highest average and median out of all of the other phases. Average is 87.3, Median is 86.5
+Phase_1 represents the most active period because it has the highest average and median out of all of the other phases. Average is 87.3, Median is 86.5
 
 2) Which file had the **poorest** data quality? How do you know?
 
