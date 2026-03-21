@@ -20,4 +20,4 @@ The new range will be 75-68 = 7 which is significantly lower tham the range abov
 
 c) Identify a different statistic that would better represent the typical variability of the dataset. Why would this measure be better?
 
-Calculating the interquartile range would eliminate outliers and give a better representation of the typical variability of the dataset and  eliminate the outliers that impact the average, median and range of the data.
+Calculating the interquartile range would eliminate outliers and give a better representation of the typical variability of the dataset. Eliminating the outliers positively impact the average, median and range of the data.
