@@ -1,63 +1,12 @@
-def clean_heartrate_data(data: list) -> tuple:
-    """
-    Clean raw heart-rate data by removing malformed or impossible values.
-    """
-    clean_list = []
-    removed_values = []
+from data_cleaning import clean_heartrate_data
+from statistics import average, median, range
 
-    for item in data:
-        item = item.strip()          # remove \n and spaces
-        if item.isdigit():           # good numeric value
-            clean_list.append(item)
-        else:                        # bad value: "NO DATA", "", etc.
-            removed_values.append(item)
-
-    return (clean_list, removed_values)
-        
-result = (clean_heartrate_data)
- 
-def average(data: list) -> float:
-    """
-    Calculate average of a list of integers using a for-loop. Assumes data is clean.
-    """
-    total = 0
-    for item in data:
-        total += int(item)
-    avg_data = total / len(data)
-    return round(avg_data, 2)
-
-
-def median(data: list) -> float:
-    """
-    """
-    sorted_data = sorted(data)
-    mid = len(sorted_data) // 2
-
-    if len(sorted_data) % 2 == 0:
-        median_data = (int(sorted_data[mid - 1]) + int(sorted_data[mid])) / 2 
-    else:
-        median_data = int(sorted_data[mid])
-    return round(median_data, 2)
-
-
-def range(data: list) -> float:
-    """
-    """
-    numeric_data = [float(x) for x in data]
-    sorted_data = sorted(numeric_data)
-    range_data = sorted_data[-1] - sorted_data[0]
-    return round(range_data, 2)
-
-
-def rolling_avg(data: list, k: int) -> float:
-    """
-    CHALLENGE FUNCTION (Optional)
-    """
-    pass
-
+# Using clean_heartrate_data from the data_cleaning module (imported above).
+# Using average, median, and range from the statistics module (imported above).
+# All of these functions are defined in their respective modules & can call them directly in this file.
 def run(file: str):
     """
-    Process heart rate data from the a file by cleaning and
+    Process heart rate data from a file by cleaning and
     calculating summary statistics. Print out final values.
 
     Args:
@@ -77,6 +26,7 @@ def run(file: str):
     # Use `clean_heartrate_data` to clean the data and remove invalid entries
     cleaned_list, removed_values = clean_heartrate_data(data)
     
+    # print out the removed values and cleaned values to the console
     for item in removed_values:
         print(f"Removed invalid value: {item}")
 
@@ -88,7 +38,7 @@ def run(file: str):
 
     # print out your data quality measure to the console
     avg = average(cleaned_list)
-    med = median (cleaned_list)
+    med = median(cleaned_list)
     rng = range(cleaned_list)
 
     # print out your descriptive statistics to the console
